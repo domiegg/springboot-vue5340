@@ -1,0 +1,109 @@
+
+var projectName = '家政服务管理平台';
+/**
+ * 轮播图配置
+ */
+var swiper = {
+	// 设定轮播容器宽度，支持像素和百分比
+	width: '100%',
+	height: '400px',
+	// hover（悬停显示）
+	// always（始终显示）
+	// none（始终不显示）
+	arrow: 'none',
+	// default（左右切换）
+	// updown（上下切换）
+	// fade（渐隐渐显切换）
+	anim: 'default',
+	// 自动切换的时间间隔
+	// 默认3000
+	interval: 2000,
+	// 指示器位置
+	// inside（容器内部）
+	// outside（容器外部）
+	// none（不显示）
+	indicator: 'outside'
+}
+
+/**
+ * 个人中心菜单
+ */
+var centerMenu = [{
+	name: '个人中心',
+	url: '../' + localStorage.getItem('userTable') + '/center.html'
+}, 
+{
+        name: '我的收藏',
+        url: '../storeup/list.html'
+}
+]
+
+
+var indexNav = [
+
+{
+	name: '服务信息',
+	url: './pages/fuwuxinxi/list.html'
+}, 
+{
+	name: '培训体系',
+	url: './pages/peixuntixi/list.html'
+}, 
+
+{
+	name: '公告信息',
+	url: './pages/news/list.html'
+},
+{
+	name: '留言反馈',
+	url: './pages/messages/list.html'
+}
+]
+
+var adminurl =  "http://localhost:8080/springbootm7qt4/admin/dist/index.html";
+
+var cartFlag = false
+
+var chatFlag = false
+
+
+
+
+var menu = [{"backMenu":[{"child":[{"appFrontIcon":"cuIcon-news","buttons":["新增","查看","修改","删除"],"menu":"用户","menuJump":"列表","tableName":"yonghu"}],"menu":"用户管理"},{"child":[{"appFrontIcon":"cuIcon-shop","buttons":["新增","查看","修改","删除"],"menu":"服务人员","menuJump":"列表","tableName":"fuwurenyuan"}],"menu":"服务人员管理"},{"child":[{"appFrontIcon":"cuIcon-present","buttons":["新增","查看","修改","删除"],"menu":"服务信息","menuJump":"列表","tableName":"fuwuxinxi"}],"menu":"服务信息管理"},{"child":[{"appFrontIcon":"cuIcon-discover","buttons":["新增","查看","修改","删除"],"menu":"服务类型","menuJump":"列表","tableName":"fuwuleixing"}],"menu":"服务类型管理"},{"child":[{"appFrontIcon":"cuIcon-time","buttons":["查看","删除","审核","分配","报表"],"menu":"服务预约","menuJump":"列表","tableName":"fuwuyuyue"}],"menu":"服务预约管理"},{"child":[{"appFrontIcon":"cuIcon-full","buttons":["查看","删除","审核"],"menu":"服务取消","menuJump":"列表","tableName":"fuwuquxiao"}],"menu":"服务取消管理"},{"child":[{"appFrontIcon":"cuIcon-copy","buttons":["查看","修改","删除"],"menu":"服务分配","menuJump":"列表","tableName":"fuwufenpei"}],"menu":"服务分配管理"},{"child":[{"appFrontIcon":"cuIcon-discover","buttons":["查看","删除"],"menu":"服务进度","menuJump":"列表","tableName":"fuwujindu"}],"menu":"服务进度管理"},{"child":[{"appFrontIcon":"cuIcon-album","buttons":["删除","查看"],"menu":"评价信息","menuJump":"列表","tableName":"pingjiaxinxi"}],"menu":"评价信息管理"},{"child":[{"appFrontIcon":"cuIcon-medal","buttons":["新增","查看","修改","删除"],"menu":"培训体系","menuJump":"列表","tableName":"peixuntixi"}],"menu":"培训体系管理"},{"child":[{"appFrontIcon":"cuIcon-message","buttons":["查看","回复","删除"],"menu":"留言反馈","tableName":"messages"}],"menu":"留言反馈"},{"child":[{"appFrontIcon":"cuIcon-newshot","buttons":["查看","修改"],"menu":"轮播图管理","tableName":"config"},{"appFrontIcon":"cuIcon-news","buttons":["新增","查看","修改","删除"],"menu":"公告信息","tableName":"news"}],"menu":"系统管理"}],"frontMenu":[{"child":[{"appFrontIcon":"cuIcon-present","buttons":["查看","预约"],"menu":"服务信息列表","menuJump":"列表","tableName":"fuwuxinxi"}],"menu":"服务信息模块"},{"child":[{"appFrontIcon":"cuIcon-phone","buttons":["查看"],"menu":"培训体系列表","menuJump":"列表","tableName":"peixuntixi"}],"menu":"培训体系模块"}],"hasBackLogin":"是","hasBackRegister":"否","hasFrontLogin":"否","hasFrontRegister":"否","roleName":"管理员","tableName":"users"},{"backMenu":[{"child":[{"appFrontIcon":"cuIcon-time","buttons":["查看","修改","删除","支付","取消"],"menu":"服务预约","menuJump":"列表","tableName":"fuwuyuyue"}],"menu":"服务预约管理"},{"child":[{"appFrontIcon":"cuIcon-full","buttons":["查看","修改","删除"],"menu":"服务取消","menuJump":"列表","tableName":"fuwuquxiao"}],"menu":"服务取消管理"},{"child":[{"appFrontIcon":"cuIcon-copy","buttons":["查看"],"menu":"服务分配","menuJump":"列表","tableName":"fuwufenpei"}],"menu":"服务分配管理"},{"child":[{"appFrontIcon":"cuIcon-discover","buttons":["查看","评价"],"menu":"服务进度","menuJump":"列表","tableName":"fuwujindu"}],"menu":"服务进度管理"},{"child":[{"appFrontIcon":"cuIcon-album","buttons":["查看","修改","删除"],"menu":"评价信息","menuJump":"列表","tableName":"pingjiaxinxi"}],"menu":"评价信息管理"},{"child":[{"appFrontIcon":"cuIcon-message","buttons":["查看","删除"],"menu":"留言反馈","tableName":"messages"}],"menu":"留言反馈"},{"child":[{"appFrontIcon":"cuIcon-favor","buttons":["查看","删除"],"menu":"我的收藏管理","tableName":"storeup"}],"menu":"我的收藏管理"}],"frontMenu":[{"child":[{"appFrontIcon":"cuIcon-present","buttons":["查看","预约"],"menu":"服务信息列表","menuJump":"列表","tableName":"fuwuxinxi"}],"menu":"服务信息模块"},{"child":[{"appFrontIcon":"cuIcon-phone","buttons":["查看"],"menu":"培训体系列表","menuJump":"列表","tableName":"peixuntixi"}],"menu":"培训体系模块"}],"hasBackLogin":"是","hasBackRegister":"否","hasFrontLogin":"是","hasFrontRegister":"是","roleName":"用户","tableName":"yonghu"},{"backMenu":[{"child":[{"appFrontIcon":"cuIcon-copy","buttons":["查看","进度"],"menu":"服务分配","menuJump":"列表","tableName":"fuwufenpei"}],"menu":"服务分配管理"},{"child":[{"appFrontIcon":"cuIcon-discover","buttons":["查看","修改","删除"],"menu":"服务进度","menuJump":"列表","tableName":"fuwujindu"}],"menu":"服务进度管理"},{"child":[{"appFrontIcon":"cuIcon-album","buttons":["查看"],"menu":"评价信息","menuJump":"列表","tableName":"pingjiaxinxi"}],"menu":"评价信息管理"}],"frontMenu":[{"child":[{"appFrontIcon":"cuIcon-present","buttons":["查看","预约"],"menu":"服务信息列表","menuJump":"列表","tableName":"fuwuxinxi"}],"menu":"服务信息模块"},{"child":[{"appFrontIcon":"cuIcon-phone","buttons":["查看"],"menu":"培训体系列表","menuJump":"列表","tableName":"peixuntixi"}],"menu":"培训体系模块"}],"hasBackLogin":"是","hasBackRegister":"否","hasFrontLogin":"否","hasFrontRegister":"否","roleName":"服务人员","tableName":"fuwurenyuan"}]
+
+
+var isAuth = function (tableName,key) {
+    let role = localStorage.getItem("userTable");
+    let menus = menu;
+    for(let i=0;i<menus.length;i++){
+        if(menus[i].tableName==role){
+            for(let j=0;j<menus[i].backMenu.length;j++){
+                for(let k=0;k<menus[i].backMenu[j].child.length;k++){
+                    if(tableName==menus[i].backMenu[j].child[k].tableName){
+                        let buttons = menus[i].backMenu[j].child[k].buttons.join(',');
+                        return buttons.indexOf(key) !== -1 || false
+                    }
+                }
+            }
+        }
+    }
+    return false;
+}
+
+var isFrontAuth = function (tableName,key) {
+    let role = localStorage.getItem("userTable");
+    let menus = menu;
+    for(let i=0;i<menus.length;i++){
+        if(menus[i].tableName==role){
+            for(let j=0;j<menus[i].frontMenu.length;j++){
+                for(let k=0;k<menus[i].frontMenu[j].child.length;k++){
+                    if(tableName==menus[i].frontMenu[j].child[k].tableName){
+                        let buttons = menus[i].frontMenu[j].child[k].buttons.join(',');
+                        return buttons.indexOf(key) !== -1 || false
+                    }
+                }
+            }
+        }
+    }
+    return false;
+}
